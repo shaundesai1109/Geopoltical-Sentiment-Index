@@ -86,14 +86,14 @@ class TradePair:
 
     def signalsMovingAverage(self, time_window, gsi_index, reverse=False):
 
-        gsi_percs = gsi_index.movingAverage(time_window = time_window)
-        gsi_percs = gsi_percs.values[12:]
+        gsi_MAs = gsi_index.movingAverage(time_window = time_window)
+        gsi_MAs = gsi_MAs.values[12:]
         gsi_dates = gsi_index.dates
         gsi = gsi_index.gsiindex.values[12:]
         signals = [0]
 
         for i in range(len(gsi_dates[12:])-1):
-            if gsi_percs[i] > gsi[i]:
+            if gsi_MAs[i] > gsi[i]:
                 signal = NEGATIVE_SIGNAL if reverse else 1
                 signals.append(signal)
             else:
