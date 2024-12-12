@@ -22,19 +22,15 @@ def regressionPair(gsi_index_data, pair_data, time_window, MA = True, plot=True)
     
     # Add constant term to the independent variable
     x = sm.add_constant(x)
-
-    # Fit the linear regression model
+    
     model = sm.OLS(y, x)
     results = model.fit()
 
-    # Extract coefficients and their standard errors
     regression_coeffs = results.params
     std_errors = results.bse
-
-    # T-statistics
+    
     t_stat = regression_coeffs / std_errors
 
-    # P-values
     p_values = results.pvalues
 
     if plot:
