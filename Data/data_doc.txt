@@ -1,1 +1,1 @@
-The data used in this project, and contained in this folder, is obtained as per the details provided in the source paper. 
+The data used in this project, and contained in this folder, is obtained as per the details provided in the source paper (https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4948780).
